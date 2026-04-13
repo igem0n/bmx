@@ -1,6 +1,6 @@
 # bmx Changelog
 
-## Version next
+## v1.7
 
 ### Breaking changes
 
