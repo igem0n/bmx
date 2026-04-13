@@ -36,9 +36,9 @@ jobs:
       matrix:
         include:
           - name: windows
-            os: windows-2019
+            os: windows-2022
           - name: macos-xcode-universal
-            os: macos-13
+            os: macos-14
           - name: ubuntu
             os: ubuntu-latest
 
