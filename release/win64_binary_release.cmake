@@ -47,7 +47,7 @@ set(bmx_package_dir "${package_dir}/bmx-win64-binary-${bmx_version}")
 file(MAKE_DIRECTORY ${bmx_package_dir})
 
 # Configure, build, test and install
-run_command("${build_dir}" cmake -G "Visual Studio 16 2019" -A x64 -DCMAKE_INSTALL_PREFIX=../install ../../)
+run_command("${build_dir}" cmake -G "Visual Studio 17 2022" -A x64 -DCMAKE_INSTALL_PREFIX=../install ../../)
 run_command("${build_dir}" cmake --build . --config Release)
 run_command("${build_dir}" ctest -C Release)
 run_command("${build_dir}" cmake --build . --config Release --target install)
