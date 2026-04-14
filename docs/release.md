@@ -48,13 +48,13 @@ git push origin v${BMX_VERSION}
 
 ## Create a GitHub Release
 
-* Create a [new release](https://github.com/bbc/ebu/releases)
+* Create a [new release](https://github.com/ebu/bmx/releases)
 * Copy the previous release's text as a starting point
     * Select the `v<major version>.<minor version>` tag
     * Change the CHANGELOG link
     * Update the zip filenames with the new version
     * Update the compiler versions used for the binaries
-        * These can be found in the actions output in the `Win64 binary release` and `MacOS Universal binary release` build steps in the 2 jobs of the [Release](https://github.com/bbc/ebu/actions/workflows/release.yml) workflow in GitHub Actions
+        * These can be found in the actions output in the `Win64 binary release` and `MacOS Universal binary release` build steps in the 2 jobs of the [Release](https://github.com/ebu/bmx/actions/workflows/release.yml) workflow in GitHub Actions
 * Upload the source and binary zips to the release
 
 ## Create a Docker Image for the GitHub Container Registry
