@@ -72,7 +72,7 @@ jobs:
         if: ${{ matrix.name == 'macos-brew' }}
         shell: bash
         run: |
-          brew install git cmake expat uriparser curl
+          brew install expat uriparser
 
       - name: Install dependencies (macos-xcode-universal)
         if: ${{ matrix.name == 'macos-xcode-universal' }}
