@@ -3,7 +3,7 @@ if(expat_link_lib)
 endif()
 
 
-if(MSVC OR BMX_BUILD_EXPAT_SOURCE)
+if(BMX_BUILD_EXPAT_SOURCE)
     include(FetchContent)
 
     set(EXPAT_BUILD_DOCS OFF CACHE INTERNAL "")
@@ -22,26 +22,16 @@ if(MSVC OR BMX_BUILD_EXPAT_SOURCE)
         )
     else()
         FetchContent_Declare(FT_libexpat
+			SOURCE_SUBDIR expat
             GIT_REPOSITORY https://github.com/libexpat/libexpat
-            GIT_TAG R_2_5_0
+            GIT_TAG R_2_8_0
         )
     endif()
 
-    # Use FetchContent_Populate because the CMakeLists.txt is in the expat/ sub-directory
-    FetchContent_GetProperties(FT_libexpat)
-    if(NOT FT_libexpat_POPULATED)
-        FetchContent_Populate(FT_libexpat)
-
-        add_subdirectory("${ft_libexpat_SOURCE_DIR}/expat" ${ft_libexpat_BINARY_DIR})
-    endif()
+    FetchContent_MakeAvailable(FT_libexpat) 
 
     set(expat_link_lib expat)
 else()
-    include(FindEXPAT)
-
-    if(NOT EXPAT_FOUND)
-        message(FATAL_ERROR "expat dependency not found")
-    endif()
-
+    find_package(EXPAT REQUIRED)
     set(expat_link_lib EXPAT::EXPAT)
 endif()

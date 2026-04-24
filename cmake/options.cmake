@@ -41,6 +41,9 @@ if(UNIX)
 elseif(MSVC)
     # Shared library currently not supported
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "Build using shared libraries")
+	
+	# Option to build expat from source in deps/ or from the git repo
+	option(BMX_BUILD_EXPAT_SOURCE "Build expat from source" ON)
 
     # Option to set to use the runtime
     set(BMX_SET_MSVC_RUNTIME "MD" CACHE STRING "Set MSVC debug/release runtime to 'MD' (MultiThreadedDLL), 'MT' (MultiThreaded) or 'default' (use the default)")
