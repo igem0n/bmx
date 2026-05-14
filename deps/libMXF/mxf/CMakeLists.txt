@@ -1,5 +1,6 @@
 set(MXF_sources
     mxf_app.c
+    mxf_arri.c
     mxf_avid.c
     mxf_avid_dictionary.c
     mxf_avid_dictionary_data.h
@@ -33,6 +34,9 @@ set(MXF_headers
     mxf_app_types.h
     mxf_avid.h
     mxf_avid_dictionary.h
+    mxf_arri.h
+    mxf_arri_extensions_data_model.h
+    mxf_arri_labels_and_keys.h
     mxf_avid_extensions_data_model.h
     mxf_avid_labels_and_keys.h
     mxf_avid_metadictionary.h
