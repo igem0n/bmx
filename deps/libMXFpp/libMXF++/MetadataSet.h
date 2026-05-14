@@ -134,6 +134,7 @@ public:
     uint16_t getUInt16Item(const mxfKey *itemKey) const;
     uint32_t getUInt32Item(const mxfKey *itemKey) const;
     uint64_t getUInt64Item(const mxfKey *itemKey) const;
+    float getFloatItem(const mxfKey *itemKey) const;
     int8_t getInt8Item(const mxfKey *itemKey) const;
     int16_t getInt16Item(const mxfKey *itemKey) const;
     int32_t getInt32Item(const mxfKey *itemKey) const;
@@ -166,6 +167,7 @@ public:
     std::vector<uint16_t> getUInt16ArrayItem(const mxfKey *itemKey) const;
     std::vector<uint32_t> getUInt32ArrayItem(const mxfKey *itemKey) const;
     std::vector<uint64_t> getUInt64ArrayItem(const mxfKey *itemKey) const;
+    std::vector<float> getFloatArrayItem(const mxfKey *itemKey) const;
     std::vector<int8_t> getInt8ArrayItem(const mxfKey *itemKey) const;
     std::vector<int16_t> getInt16ArrayItem(const mxfKey *itemKey) const;
     std::vector<int32_t> getInt32ArrayItem(const mxfKey *itemKey) const;
@@ -193,6 +195,7 @@ public:
     void setUInt16Item(const mxfKey *itemKey, uint16_t value);
     void setUInt32Item(const mxfKey *itemKey, uint32_t value);
     void setUInt64Item(const mxfKey *itemKey, uint64_t value);
+    void setFloatItem(const mxfKey *itemKey, float value);
     void setInt8Item(const mxfKey *itemKey, int8_t value);
     void setInt16Item(const mxfKey *itemKey, int16_t value);
     void setInt32Item(const mxfKey *itemKey, int32_t value);
@@ -224,6 +227,7 @@ public:
     void setUInt16ArrayItem(const mxfKey *itemKey, const std::vector<uint16_t> &value);
     void setUInt32ArrayItem(const mxfKey *itemKey, const std::vector<uint32_t> &value);
     void setUInt64ArrayItem(const mxfKey *itemKey, const std::vector<uint64_t> &value);
+    void setFloatArrayItem(const mxfKey *itemKey, const std::vector<float> &value);
     void setInt8ArrayItem(const mxfKey *itemKey, const std::vector<int8_t> &value);
     void setInt16ArrayItem(const mxfKey *itemKey, const std::vector<int16_t> &value);
     void setInt32ArrayItem(const mxfKey *itemKey, const std::vector<int32_t> &value);

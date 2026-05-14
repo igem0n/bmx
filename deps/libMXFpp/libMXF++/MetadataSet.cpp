@@ -201,6 +201,13 @@ uint64_t MetadataSet::getUInt64Item(const mxfKey *itemKey) const
     return result;
 }
 
+float MetadataSet::getFloatItem(const mxfKey *itemKey) const
+{
+    float result;
+    MXFPP_CHECK(mxf_get_float_item(_cMetadataSet, itemKey, &result));
+    return result;
+}
+
 int8_t MetadataSet::getInt8Item(const mxfKey *itemKey) const
 {
     int8_t result;
@@ -545,6 +552,24 @@ vector<uint64_t> MetadataSet::getUInt64ArrayItem(const mxfKey *itemKey) const
     return result;
 }
 
+vector<float> MetadataSet::getFloatArrayItem(const mxfKey *itemKey) const
+{
+    vector<float> result;
+    ::MXFArrayItemIterator iter;
+    uint8_t *element;
+    uint32_t elementLength;
+    float value;
+
+    MXFPP_CHECK(mxf_initialise_array_item_iterator(_cMetadataSet, itemKey, &iter));
+    while (mxf_next_array_item_element(&iter, &element, &elementLength))
+    {
+        MXFPP_CHECK(elementLength == 4);
+        mxf_get_float(element, &value);
+        result.push_back(value);
+    }
+    return result;
+}
+
 vector<int8_t> MetadataSet::getInt8ArrayItem(const mxfKey *itemKey) const
 {
     vector<int8_t> result;
@@ -854,6 +879,11 @@ void MetadataSet::setUInt8Item(const mxfKey *itemKey, uint8_t value)
     MXFPP_CHECK(mxf_set_uint8_item(_cMetadataSet, itemKey, value));
 }
 
+void MetadataSet::setFloatItem(const mxfKey *itemKey, float value)
+{
+    MXFPP_CHECK(mxf_set_float_item(_cMetadataSet, itemKey, value));
+}
+
 void MetadataSet::setUInt16Item(const mxfKey *itemKey, uint16_t value)
 {
     MXFPP_CHECK(mxf_set_uint16_item(_cMetadataSet, itemKey, value));
@@ -1084,6 +1114,18 @@ void MetadataSet::setUInt64ArrayItem(const mxfKey *itemKey, const vector<uint64_
     {
         mxf_set_uint64(value.at(i), data);
         data += 8;
+    }
+}
+
+void MetadataSet::setFloatArrayItem(const mxfKey *itemKey, const vector<float> &value)
+{
+    size_t i;
+    uint8_t *data = 0;
+    MXFPP_CHECK(mxf_alloc_array_item_elements(_cMetadataSet, itemKey, 4, (uint32_t)value.size(), &data));
+    for (i = 0; i < value.size(); i++)
+    {
+        mxf_set_float(value.at(i), data);
+        data += 4;
     }
 }
 
