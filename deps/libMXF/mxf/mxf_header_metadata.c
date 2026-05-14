@@ -217,6 +217,7 @@ static int validate_set(MXFMetadataSet *set, MXFSetDef *setDef, int logErrors)
                     break;
                 case MXF_INT32_TYPE:
                 case MXF_UINT32_TYPE:
+                case MXF_FLOAT_TYPE:
                     CHECK_LENGTH(4)
                     break;
                 case MXF_INT64_TYPE:
@@ -238,6 +239,7 @@ static int validate_set(MXFMetadataSet *set, MXFSetDef *setDef, int logErrors)
                     break;
                 case MXF_INT32ARRAY_TYPE:
                 case MXF_UINT32ARRAY_TYPE:
+                case MXF_FLOATARRAY_TYPE:
                 case MXF_INT32BATCH_TYPE:
                 case MXF_UINT32BATCH_TYPE:
                     CHECK_ARRAY_HEADER_LENGTH
@@ -1158,6 +1160,11 @@ void mxf_get_int64(const uint8_t *value, int64_t *result)
     mxf_get_uint64(value, (uint64_t*)result);
 }
 
+void mxf_get_float(const uint8_t *value, float *result)
+{
+    mxf_get_uint32(value, (uint32_t*)result);
+}
+
 void mxf_get_version_type(const uint8_t *value, mxfVersionType *result)
 {
     mxf_get_uint16(value, result);
@@ -1553,6 +1560,11 @@ void mxf_set_int64(int64_t value, uint8_t *result)
     mxf_set_uint64(*(uint64_t*)&value, result);
 }
 
+void mxf_set_float(float value, uint8_t *result)
+{
+    mxf_set_uint32(*(uint32_t*)&value, result);
+}
+
 void mxf_set_version_type(mxfVersionType value, uint8_t *result)
 {
     mxf_set_uint16(value, result);
@@ -1919,6 +1931,11 @@ int mxf_set_int32_item(MXFMetadataSet *set, const mxfKey *itemKey, int32_t value
 int mxf_set_int64_item(MXFMetadataSet *set, const mxfKey *itemKey, int64_t value)
 {
     SET_VALUE(8, mxf_set_int64);
+}
+
+int mxf_set_float_item(MXFMetadataSet *set, const mxfKey *itemKey, float value)
+{
+    SET_VALUE(4, mxf_set_float);
 }
 
 int mxf_set_version_type_item(MXFMetadataSet *set, const mxfKey *itemKey, mxfVersionType value)
@@ -2308,6 +2325,11 @@ int mxf_get_int32_item(MXFMetadataSet *set, const mxfKey *itemKey, int32_t *valu
 int mxf_get_int64_item(MXFMetadataSet *set, const mxfKey *itemKey, int64_t *value)
 {
     GET_VALUE(8, mxf_get_int64);
+}
+
+int mxf_get_float_item(MXFMetadataSet *set, const mxfKey *itemKey, float *value)
+{
+    GET_VALUE(4, mxf_get_float);
 }
 
 int mxf_get_version_type_item(MXFMetadataSet *set, const mxfKey *itemKey, mxfVersionType *value)
