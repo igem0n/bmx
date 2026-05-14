@@ -98,5 +98,19 @@
 #include <libMXF++/metadata/MGASoundfieldGroupLabelSubDescriptor.h>
 #include <libMXF++/metadata/ContainerConstraintsSubDescriptor.h>
 
+// ARRI RDD 54/55 metadata sets
+#include <libMXF++/metadata/PictureEssenceProcessingSubDescriptor.h>
+#include <libMXF++/metadata/ARRIRAWPictureEssenceProcessingSubDescriptor.h>
+#include <libMXF++/metadata/TextureProcessingSubDescriptor.h>
+#include <libMXF++/metadata/TextureGen1ProcessingSubDescriptor.h>
+#include <libMXF++/metadata/TextureGen2ProcessingSubDescriptor.h>
+#include <libMXF++/metadata/ARRISensorDimensions.h>
+#include <libMXF++/metadata/ARRIRectangle.h>
+#include <libMXF++/metadata/ARRISensorCharacteristics.h>
+#include <libMXF++/metadata/ARRIColorEncoding.h>
+#include <libMXF++/metadata/ARRILUT3D.h>
+#include <libMXF++/metadata/ARRIColorProcessing.h>
+#include <libMXF++/metadata/ARRIClipSubDescriptor.h>
+
 
 #endif

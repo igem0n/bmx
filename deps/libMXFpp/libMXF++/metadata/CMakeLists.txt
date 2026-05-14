@@ -62,6 +62,18 @@ list(APPEND MXFpp_sources
     metadata/VBIDataDescriptor.cpp
     metadata/VC2SubDescriptor.cpp
     metadata/WaveAudioDescriptor.cpp
+    metadata/ARRIClipSubDescriptor.cpp
+    metadata/ARRIColorEncoding.cpp
+    metadata/ARRIColorProcessing.cpp
+    metadata/ARRILUT3D.cpp
+    metadata/ARRIRectangle.cpp
+    metadata/ARRISensorCharacteristics.cpp
+    metadata/ARRISensorDimensions.cpp
+    metadata/ARRIRAWPictureEssenceProcessingSubDescriptor.cpp
+    metadata/PictureEssenceProcessingSubDescriptor.cpp
+    metadata/TextureGen1ProcessingSubDescriptor.cpp
+    metadata/TextureGen2ProcessingSubDescriptor.cpp
+    metadata/TextureProcessingSubDescriptor.cpp
 )
 
 list(APPEND MXFpp_headers
@@ -129,6 +141,18 @@ list(APPEND MXFpp_headers
     metadata/VBIDataDescriptor.h
     metadata/VC2SubDescriptor.h
     metadata/WaveAudioDescriptor.h
+    metadata/ARRIClipSubDescriptor.h
+    metadata/ARRIColorEncoding.h
+    metadata/ARRIColorProcessing.h
+    metadata/ARRILUT3D.h
+    metadata/ARRIRectangle.h
+    metadata/ARRISensorCharacteristics.h
+    metadata/ARRISensorDimensions.h
+    metadata/ARRIRAWPictureEssenceProcessingSubDescriptor.h
+    metadata/PictureEssenceProcessingSubDescriptor.h
+    metadata/TextureGen1ProcessingSubDescriptor.h
+    metadata/TextureGen2ProcessingSubDescriptor.h
+    metadata/TextureProcessingSubDescriptor.h
 )
 
 add_subdirectory(base)

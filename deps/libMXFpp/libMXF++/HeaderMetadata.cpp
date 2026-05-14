@@ -330,7 +330,19 @@ void HeaderMetadata::initialiseObjectFactory()
     REGISTER_CLASS(MGASoundfieldGroupLabelSubDescriptor);
     REGISTER_CLASS(ContainerConstraintsSubDescriptor);
 
-    // Add new classes here
+    // ARRI RDD 54/55 metadata sets
+    REGISTER_CLASS(PictureEssenceProcessingSubDescriptor);
+    REGISTER_CLASS(ARRIRAWPictureEssenceProcessingSubDescriptor);
+    REGISTER_CLASS(TextureProcessingSubDescriptor);
+    REGISTER_CLASS(TextureGen1ProcessingSubDescriptor);
+    REGISTER_CLASS(TextureGen2ProcessingSubDescriptor);
+    REGISTER_CLASS(ARRISensorDimensions);
+    REGISTER_CLASS(ARRIRectangle);
+    REGISTER_CLASS(ARRISensorCharacteristics);
+    REGISTER_CLASS(ARRIColorEncoding);
+    REGISTER_CLASS(ARRILUT3D);
+    REGISTER_CLASS(ARRIColorProcessing);
+    REGISTER_CLASS(ARRIClipSubDescriptor);
 
 }
 

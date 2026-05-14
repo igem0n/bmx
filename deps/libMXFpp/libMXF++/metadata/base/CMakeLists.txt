@@ -62,6 +62,18 @@ list(APPEND MXFpp_sources
     metadata/base/VBIDataDescriptorBase.cpp
     metadata/base/VC2SubDescriptorBase.cpp
     metadata/base/WaveAudioDescriptorBase.cpp
+    metadata/base/ARRIClipSubDescriptorBase.cpp
+    metadata/base/ARRIColorEncodingBase.cpp
+    metadata/base/ARRIColorProcessingBase.cpp
+    metadata/base/ARRILUT3DBase.cpp
+    metadata/base/ARRIRectangleBase.cpp
+    metadata/base/ARRISensorCharacteristicsBase.cpp
+    metadata/base/ARRISensorDimensionsBase.cpp
+    metadata/base/ARRIRAWPictureEssenceProcessingSubDescriptorBase.cpp
+    metadata/base/PictureEssenceProcessingSubDescriptorBase.cpp
+    metadata/base/TextureGen1ProcessingSubDescriptorBase.cpp
+    metadata/base/TextureGen2ProcessingSubDescriptorBase.cpp
+    metadata/base/TextureProcessingSubDescriptorBase.cpp
 )
 
 list(APPEND MXFpp_headers
@@ -128,6 +140,18 @@ list(APPEND MXFpp_headers
     metadata/base/VBIDataDescriptorBase.h
     metadata/base/VC2SubDescriptorBase.h
     metadata/base/WaveAudioDescriptorBase.h
+    metadata/base/ARRIClipSubDescriptorBase.h
+    metadata/base/ARRIColorEncodingBase.h
+    metadata/base/ARRIColorProcessingBase.h
+    metadata/base/ARRILUT3DBase.h
+    metadata/base/ARRIRectangleBase.h
+    metadata/base/ARRISensorCharacteristicsBase.h
+    metadata/base/ARRISensorDimensionsBase.h
+    metadata/base/ARRIRAWPictureEssenceProcessingSubDescriptorBase.h
+    metadata/base/PictureEssenceProcessingSubDescriptorBase.h
+    metadata/base/TextureGen1ProcessingSubDescriptorBase.h
+    metadata/base/TextureGen2ProcessingSubDescriptorBase.h
+    metadata/base/TextureProcessingSubDescriptorBase.h
 )
 
 set(MXFpp_sources ${MXFpp_sources} PARENT_SCOPE)
