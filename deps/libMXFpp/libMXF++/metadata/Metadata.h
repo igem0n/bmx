@@ -59,12 +59,12 @@
 #include <libMXF++/metadata/GenericPictureEssenceDescriptor.h>
 #include <libMXF++/metadata/CDCIEssenceDescriptor.h>
 #include <libMXF++/metadata/MPEGVideoDescriptor.h>
+#include <libMXF++/metadata/MPEGAudioDescriptor.h>
 #include <libMXF++/metadata/RGBAEssenceDescriptor.h>
 #include <libMXF++/metadata/GenericSoundEssenceDescriptor.h>
 #include <libMXF++/metadata/GenericDataEssenceDescriptor.h>
 #include <libMXF++/metadata/MultipleDescriptor.h>
 #include <libMXF++/metadata/WaveAudioDescriptor.h>
-#include <libMXF++/metadata/MpegAudioDescriptor.h>
 #include <libMXF++/metadata/AES3AudioDescriptor.h>
 #include <libMXF++/metadata/MaterialPackage.h>
 #include <libMXF++/metadata/SourcePackage.h>
