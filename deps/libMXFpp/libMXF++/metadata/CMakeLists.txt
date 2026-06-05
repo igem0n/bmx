@@ -36,6 +36,7 @@ list(APPEND MXFpp_sources
     metadata/MGAAudioMetadataSubDescriptor.cpp
     metadata/MGASoundEssenceDescriptor.cpp
     metadata/MGASoundfieldGroupLabelSubDescriptor.cpp
+    metadata/MPEGAudioDescriptor.cpp
     metadata/MPEGVideoDescriptor.cpp
     metadata/MaterialPackage.cpp
     metadata/MultipleDescriptor.cpp
@@ -102,6 +103,7 @@ list(APPEND MXFpp_headers
     metadata/MGAAudioMetadataSubDescriptor.h
     metadata/MGASoundEssenceDescriptor.h
     metadata/MGASoundfieldGroupLabelSubDescriptor.h
+    metadata/MPEGAudioDescriptor.h
     metadata/MPEGVideoDescriptor.h
     metadata/MaterialPackage.h
     metadata/Metadata.h

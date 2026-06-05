@@ -67,6 +67,7 @@
 #include <libMXF++/metadata/GenericDataEssenceDescriptor.h>
 #include <libMXF++/metadata/MultipleDescriptor.h>
 #include <libMXF++/metadata/WaveAudioDescriptor.h>
+#include <libMXF++/metadata/MpegAudioDescriptor.h>
 #include <libMXF++/metadata/AES3AudioDescriptor.h>
 #include <libMXF++/metadata/SourcePackage.h>
 #include <libMXF++/metadata/DMSet.h>

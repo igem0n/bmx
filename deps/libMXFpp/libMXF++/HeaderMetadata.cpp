@@ -291,6 +291,7 @@ void HeaderMetadata::initialiseObjectFactory()
     REGISTER_CLASS(FileDescriptor);
     REGISTER_CLASS(GenericPictureEssenceDescriptor);
     REGISTER_CLASS(CDCIEssenceDescriptor);
+    REGISTER_CLASS(MPEGAudioDescriptor);
     REGISTER_CLASS(MPEGVideoDescriptor);
     REGISTER_CLASS(RGBAEssenceDescriptor);
     REGISTER_CLASS(GenericSoundEssenceDescriptor);
