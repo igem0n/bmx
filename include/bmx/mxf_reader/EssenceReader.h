@@ -107,6 +107,8 @@ public:
     int64_t LegitimisePosition(int64_t position);
 
     bool IsComplete() const;
+    bool HaveConstantEditUnitSize() const;
+    std::vector<const mxfpp::IndexTableSegment*> GetIndexSegments() const;
 
 private:
     uint32_t ReadClipWrappedSamples(uint32_t num_samples);

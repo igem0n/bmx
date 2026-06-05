@@ -137,6 +137,7 @@ public:
     bool GetTemporalReordering(uint32_t element_index);
 
     bool GetIndexEntry(MXFIndexEntryExt *entry, int64_t position);
+    const std::vector<IndexTableHelperSegment*>& GetSegments() const;
 
 private:
     void InsertCBEIndexSegment(std::unique_ptr<IndexTableHelperSegment> &new_segment_up);

@@ -154,6 +154,7 @@ MXFFileReader::MXFFileReader()
     mEmptyFramesSet = false;
     mHeaderMetadata = 0;
     mMXFVersion = 0;
+    mKAGSize = 0;
     mOPLabel = g_Null_UL;
     mGuessedWrappingType = MXF_FRAME_WRAPPED;
     mWrappingType = MXF_UNKNOWN_WRAPPING_TYPE;
@@ -324,7 +325,7 @@ MXFFileReader::OpenResult MXFFileReader::Open(File *file, const URI &abs_uri, co
         Partition &header_partition = file->getPartition(0);
 
         mOPLabel = *header_partition.getOperationalPattern();
-
+        mKAGSize = header_partition.getKagSize();
 
         // get or guess the essence wrapping type for non-timed text essence containers
 
@@ -923,6 +924,24 @@ int64_t MXFFileReader::GetFixedLeadFillerOffset() const
     }
 
     return fixed_offset;
+}
+
+std::vector<const mxfpp::IndexTableSegment *> bmx::MXFFileReader::GetIndexTableSegments() const
+{
+    if(mEssenceReader) {
+        return mEssenceReader->GetIndexSegments();
+    }
+
+    return {};
+}
+
+bool bmx::MXFFileReader::HaveConstantEditUnitSize() const
+{
+    if(mEssenceReader) {
+        return mEssenceReader->HaveConstantEditUnitSize();
+    }
+
+    return false;
 }
 
 MXFTrackReader* MXFFileReader::GetTrackReader(size_t index) const

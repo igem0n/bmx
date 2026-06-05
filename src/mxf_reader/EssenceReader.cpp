@@ -496,6 +496,16 @@ bool EssenceReader::IsComplete() const
     return mEssenceChunkHelper.IsComplete() && mIndexTableHelper.IsComplete();
 }
 
+std::vector<const mxfpp::IndexTableSegment*> bmx::EssenceReader::GetIndexSegments() const
+{
+    return { mIndexTableHelper.GetSegments().begin(), mIndexTableHelper.GetSegments().end() };
+}
+
+bool bmx::EssenceReader::HaveConstantEditUnitSize() const
+{
+    return mIndexTableHelper.HaveConstantEditUnitSize();
+}
+
 uint32_t EssenceReader::ReadClipWrappedSamples(uint32_t num_samples)
 {
     // for incomplete clip wrapped files only support seeking to position 0

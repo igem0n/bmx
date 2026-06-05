@@ -137,10 +137,14 @@ public:
     virtual int64_t GetFixedLeadFillerOffset() const;
 
     uint16_t GetMXFVersion() const    { return mMXFVersion; }
+    uint16_t GetKAGSize() const    { return mKAGSize; }
     mxfUL GetOPLabel() const          { return mOPLabel; }
     bool HaveInternalEssence() const  { return !mInternalTrackReaders.empty(); }
     bool IsClipWrapped()              { return mWrappingType == MXF_CLIP_WRAPPED; }
     bool IsFrameWrapped()             { return mWrappingType == MXF_FRAME_WRAPPED; }
+
+    std::vector<const mxfpp::IndexTableSegment*> GetIndexTableSegments() const;
+    bool HaveConstantEditUnitSize() const;
 
     size_t GetFileId() const        { return mFileId; }
     std::string GetFilename() const { return GetFileIndex()->GetFilename(mFileId); }
@@ -242,6 +246,7 @@ private:
     mxfpp::HeaderMetadata *mHeaderMetadata;
 
     uint16_t mMXFVersion;
+    uint32_t mKAGSize;
     mxfUL mOPLabel;
     MXFEssenceWrappingType mGuessedWrappingType;
     MXFEssenceWrappingType mWrappingType;

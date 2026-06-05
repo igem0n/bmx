@@ -638,6 +638,10 @@ bool IndexTableHelper::GetIndexEntry(MXFIndexEntryExt *entry, int64_t position)
     return true;
 }
 
+const std::vector<IndexTableHelperSegment*>& bmx::IndexTableHelper::GetSegments() const
+{
+    return mSegments;
+}
 void IndexTableHelper::InsertCBEIndexSegment(unique_ptr<IndexTableHelperSegment> &new_segment_up)
 {
     IndexTableHelperSegment *new_segment = new_segment_up.get();
