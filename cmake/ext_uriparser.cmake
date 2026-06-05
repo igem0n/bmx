@@ -3,7 +3,7 @@ if(uriparser_link_lib)
 endif()
 
 
-if(MSVC OR BMX_BUILD_URIPARSER_SOURCE)
+if(BMX_BUILD_URIPARSER_SOURCE)
     include(FetchContent)
 
     set(URIPARSER_BUILD_DOCS OFF CACHE INTERNAL "")
@@ -33,20 +33,7 @@ else()
     if(PC_uriparser_FOUND)
         set(uriparser_link_lib PkgConfig::PC_uriparser)
     else()
-        find_library(LIB_uriparser uriparser)
-        if(NOT LIB_uriparser)
-            message(FATAL_ERROR "uriparser dependency not found")
-        endif()
-
-        find_path(uriparser_include_dirs
-            NAMES uriparser/Uri.h
-        )
-
-        add_library(liburiparser UNKNOWN IMPORTED)
-        set_target_properties(liburiparser PROPERTIES
-            IMPORTED_LOCATION ${LIB_uriparser_LIBRARY}
-            INTERFACE_INCLUDE_DIRECTORIES ${uriparser_include_dirs}
-        )
-        set(uriparser_link_lib liburiparser)
+        find_package(uriparser REQUIRED)
+        set(uriparser_link_lib uriparser::uriparser)
     endif()
 endif()

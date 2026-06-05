@@ -45,6 +45,9 @@ elseif(MSVC)
 	# Option to build expat from source in deps/ or from the git repo
 	option(BMX_BUILD_EXPAT_SOURCE "Build expat from source" ON)
 
+    # Option to build uriparser from source in deps/ or from the git repo
+    option(BMX_BUILD_URIPARSER_SOURCE "Build uriparser from source" ON)
+
     # Option to set to use the runtime
     set(BMX_SET_MSVC_RUNTIME "MD" CACHE STRING "Set MSVC debug/release runtime to 'MD' (MultiThreadedDLL), 'MT' (MultiThreaded) or 'default' (use the default)")
     set_property(CACHE BMX_SET_MSVC_RUNTIME PROPERTY STRINGS MD MT default)
