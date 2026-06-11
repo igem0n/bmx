@@ -876,7 +876,7 @@ int mxf_read_and_return_set(MXFFile *mxfFile, const mxfKey *key, uint64_t len,
     if(key->octet6 != 0x53)
     {
         char key_str[KEY_STR_SIZE];
-        mxf_sprint_key(key_str, &key);
+        mxf_sprint_key(key_str, key);
         mxf_log_warn("Encountered set key %s with unsupported" 
             "coding of registry designator (octet 6 is expected to be 0x53 only)"
             LOG_LOC_FORMAT, key_str, LOG_LOC_PARAMS);
