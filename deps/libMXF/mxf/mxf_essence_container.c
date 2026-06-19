@@ -61,6 +61,22 @@ int mxf_is_gc_essence_element(const mxfKey *key)
     {
         return 1;
     }
+
+    /* sony picture/sound/data element */
+    if (key->octet0 == 0x06 &&
+        key->octet1 == 0x0e &&
+        key->octet2 == 0x2b &&
+        key->octet3 == 0x34 &&
+        key->octet4 == 0x01 &&
+        key->octet6 == 0x01 &&
+        key->octet8 == 0x0e &&
+        key->octet9 == 0x06 &&
+        key->octet10 == 0x0d &&
+        key->octet11 == 0x03)
+    {
+        return 1;
+    }
+
     /* generic container system element */
     else if (key->octet0 == 0x06 &&
              key->octet1 == 0x0e &&
